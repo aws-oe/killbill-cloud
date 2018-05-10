@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building docker image...
-      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION docker/templates/kaui/oe/ssl-enabled/.
+      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION docker/templates/killbill/oe/ssl-enabled/.
       - docker tag $IMAGE_REPO_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$IMAGE_REPO_NAME
   post_build:
     commands:
