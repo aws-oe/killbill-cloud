@@ -18,3 +18,9 @@ USER tomcat7
 WORKDIR $TOMCAT_HOME
 
 EXPOSE 8443
+
+CMD mkdir -p /tmp/killbill/catalogs
+
+COPY Catalog.xml /tmp/killbill/catalogs/Catalog.xml
+
+CMD ["/etc/init.d/killbill.sh", "run"]
