@@ -22,5 +22,6 @@ EXPOSE 8443
 CMD mkdir -p /tmp/killbill/catalogs
 
 COPY Catalog.xml /tmp/killbill/catalogs/Catalog.xml
+COPY shiro.ini /var/tmp/shiro.ini
 
 CMD ["/etc/init.d/killbill.sh", "run"]
