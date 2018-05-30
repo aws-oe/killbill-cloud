@@ -30,7 +30,8 @@ get '/plugins/killbill-braintree_blue/token', :provides => 'json' do
   kb_tenant = request.env['killbill_tenant']
   kb_tenant_id ||= kb_tenant.id.to_s unless kb_tenant.nil?
 
-  environment = request.GET['environment'] || 'sandbox'
+  # environment = request.GET['environment'] || 'production'
+  environment = 'production'
   customer_id = request.GET['customer_id']
 
   bconfig = (config(kb_tenant_id) || {})[:braintree_blue] || {}
