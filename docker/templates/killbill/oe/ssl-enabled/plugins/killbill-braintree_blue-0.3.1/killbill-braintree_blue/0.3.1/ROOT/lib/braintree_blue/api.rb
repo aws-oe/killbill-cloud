@@ -7,7 +7,8 @@ module Killbill #:nodoc:
           ::ActiveMerchant::Billing::BraintreeBlueGateway.application_id = config[:channel] || 'killbill_SP'
           ::ActiveMerchant::Billing::BraintreeBlueGateway.new :merchant_id => config[:merchant_id],
                                                               :public_key  => config[:public_key],
-                                                              :private_key => config[:private_key]
+                                                              :private_key => config[:private_key],
+                                                              :environment => :production
         end
 
         super(gateway_builder,
